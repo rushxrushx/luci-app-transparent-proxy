@@ -1,0 +1,13 @@
+{
+	"luci-app-transparent-proxy": {
+		"description": "Grant UCI access for luci-app-transparent-proxy",
+		"read": {
+			"uci": [ "transparent-proxy" ],
+			"file": [ "/etc/config/transparent-proxy" ]
+		},
+		"write": {
+			"uci": [ "transparent-proxy" ],
+			"file": [ "/etc/config/transparent-proxy" ]
+		}
+	}
+}

@@ -9,9 +9,11 @@ function index()
 		return
 	end
 
-	entry({"admin", "services", "transparent-proxy"},
+	page = entry({"admin", "services", "transparent-proxy"},
 		alias("admin", "services", "transparent-proxy", "general"),
-		_("Transparent Proxy"), 10).dependent = true
+		_("Transparent Proxy"), 10)
+	page.dependent = true
+	page.acl_depends={ "luci-app-transparent-proxy" }
 
 	entry({"admin", "services", "transparent-proxy", "general"},
 		cbi("transparent-proxy/general"),
