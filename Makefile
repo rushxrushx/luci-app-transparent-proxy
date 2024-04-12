@@ -76,6 +76,8 @@ define Package/luci-app-transparent-proxy/install
 	$(INSTALL_BIN) ./files/root/etc/uci-defaults/luci-transparent-proxy $(1)/etc/uci-defaults/luci-transparent-proxy
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) ./files/root/usr/bin/transparent-proxy-rules$(2) $(1)/usr/bin/transparent-proxy-rules
+	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
+	$(INSTALL_BIN) ./files/root/usr/share/rpcd/acl.d/*.json $(1)/usr/share/rpcd/acl.d/
 endef
 
 $(eval $(call BuildPackage,luci-app-transparent-proxy))
